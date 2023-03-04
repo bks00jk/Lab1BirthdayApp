@@ -1,0 +1,33 @@
+﻿<Window x:Class="KMA.ProgrammingInCSharp2023.Lab1BirthdayApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="BirthdayApp" Height="350" Width="400" MinHeight="350" MinWidth="400">
+    
+    <Grid Background="#e5a9a9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0, 10" Text="Choose your Birthday Date" FontSize="20" FontStyle="Italic" Foreground="#8c3d79"></TextBlock>
+        <DatePicker x:Name="datePicker" Language="en-US" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" SelectedDateFormat="Long" SelectedDate="{x:Static sys:DateTime.Now}" Background="#f4e4ba"/>
+        <Button Grid.Row="2" Grid.Column="0" Height="30" Margin="10, 20" Content="Get Your Age" Background="#d66ba0"  Click="GetAge_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Height="30" Margin="10, 20" Content="Get Your Zodiac Sign" Background="#d66ba0" Click="GetSign_Click"></Button>
+        <TextBlock  Grid.Row="3" Grid.Column="0" Margin="0, 15" HorizontalAlignment="Center" Text="Your Age" Foreground="#8c3d79" FontSize="14"/>
+        <TextBlock  Grid.Row="4" Grid.Column="0" Height="80" Grid.RowSpan="2" Margin="20, 10, 20, 20" Text="{Binding Age, Mode=OneWay}" Background="#f4e4ba"></TextBlock>
+        <TextBlock  Grid.Row="3" Grid.Column="1" Margin="0, 15" HorizontalAlignment="Center" Text="Your Zodiac Sign" Foreground="#8c3d79" FontSize="14"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Height="30"  Margin="20, 10, 20, 20" Text="{Binding WesternSign, Mode=OneWay}" Background="#f4e4ba"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1" Height="30" Margin="20, 0, 20, 20" Text="{Binding ChineseSign, Mode=OneWay}" Background="#f4e4ba"></TextBlock>
+    </Grid>
+</Window>
